@@ -1,0 +1,14 @@
+{%extends 'main.html'%}
+
+{% block content%}
+<h1> home Page </h1>
+<div>
+    {% for room in rooms%}
+        <div>
+            <h2> {{ room.id }} : {{ room.title }} </h2>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
+
+{% comment %} {% include "navbar.html" %} {% endcomment %}
