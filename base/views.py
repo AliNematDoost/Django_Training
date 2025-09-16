@@ -25,5 +25,13 @@ def home(request):
     # we should mention 'base' because home.html is a template of base app
     return render(request, 'base/home.html', context)
 
-def room(request):
-    return render(request, 'base/room.html')
+def room(request, pk):
+    final_room = None
+    for room in rooms:
+        # in dictionaries to get the value of a key : room['id'] or room.get('id')
+        if room.get('id') == int(pk):
+            final_room = room
+    context = {
+        'room' : final_room
+    }
+    return render(request, 'base/room.html', context)

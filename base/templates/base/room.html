@@ -1,7 +1,10 @@
 {%extends 'main.html'%}
 
 {% block content%}
-<h1> room Page </h1>
+{% comment %} <h1> room Page </h1> {% endcomment %}
+<h1>
+    {{ room.id }} -- {{ room.title }}
+</h1>
 {% endblock %}
 
 {% comment %} {% include "navbar.html" %} {% endcomment %}
